@@ -17,6 +17,6 @@ PLUGIN = Plugin(
         "darwin": "apple-darwin",
         "linux": "unknown-linux-gnu",
     },
-    bin_path=lambda kwargs: f"{kwargs['filename'].rstrip('.tar.gz')}/bat",
+    bin_path=lambda kwargs: f"{kwargs['filename'].removesuffix('.tar.gz')}/bat",
     recover_raw_version=lambda x: f"v{x}",
 )
